@@ -1,4 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/proxima_nova/proxima_nova_regular-webfont.otf') format('otf');
+    src: url('../fonts/proxima_nova/proxima_nova_regular-webfont.woff') format('woff');
+    src: url('../fonts/proxima_nova/proxima_nova_regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/futura/FuturaPT-Heavy.woff ') format('woff');
+    src: url('../fonts/futura/FuturaPT-Heavy.ttf') format('ttf');
+    src: url('../fonts/futura/FuturaPT-Heavy.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     box-sizing: border-box;
@@ -10,11 +28,137 @@ html {
 }
 
 body {
+    background-color: #464f54;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.7rem;
     min-height: 100%;
-    margin: 0;
-    font: 400 1.6rem/2 'Roboto', sans-serif;
+    color: black;
+    position: relative;
+    line-height: 1.5;
 }
 
 a, button {
-    transition: all .4s ease-in;
+    transition: all .25s ease-in;
+}
+
+.article {
+    background-color: #fff;
+    max-width: 1060px;
+    width: 96%;
+    margin: 150px auto 50px;
+    padding: 200px 120px 120px 125px;
+    position: relative;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.8);
+}
+
+.article:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 70px;
+    border-left: 3px solid #e8eced;
+}
+
+.article__info {
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 2rem;
+    color: #b4b4b4;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+}
+
+.article__title {
+    font-family: 'Futura PT', Arial, sans-serif;
+    font-size: 7.8rem;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: .5em 0 .2em;
+}
+
+span:not(:empty) +time:not(:empty):before {
+    content: ',';
+}
+
+.article__subtitle {
+    font-size: 3rem;
+    color: #8f8f8f;
+    font-style: italic;
+}
+
+.article__text {
+    margin: 1.7em 0;
+}
+
+.editor {
+    position: absolute;
+    z-index: 1;
+    width: 68%;
+    right: 0;
+    top: -100px;
+}
+
+.editor__area {
+    background-color: #181818;
+    padding: 45px 0 50px 45px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.editor__label {
+    display: block;
+    font-family: 'Proxima Nova';
+    font-size: 1.5rem;
+    color: 767676;
+    text-transform: uppercase;
+    letter-spacing: 5;
+
+}
+
+.editor__input {
+    background: transparent;
+    display: block;
+    border: none;
+    width: 100%;
+    border-bottom: 2px solid #f3ba2c;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    padding-right: .2em;
+    font-size: 1.8em;
+}
+
+.editor__input:focus {
+    outline: none;
+    border-color: #303030;
+}
+
+.editor__tools {
+    background-color: #f3ba2c;
+    margin-left: 60px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.editor__btns {
+    margin: 0;
+    padding: 15px 40px;
+}
+
+.editor__btns li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.editor__btn {
+    color: #fff;
+    opacity: 0.6;
+}
+
+.editor__btn:hover,
+.editor__btn:focus {
+    opacity: 1;
+}
+
+.editor__btn:active {
+    color: #f8f8f8;
+    opacity: 1;
 }
